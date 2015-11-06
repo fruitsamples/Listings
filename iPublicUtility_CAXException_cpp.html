@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>AQOfflineRenderTest: iPublicUtility/CAXException.cpp</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta id="Generator" name="Generator" content="Gutenberg"/>
+    <meta id="GeneratorVersion" name="GeneratorVersion" content="v132"/>
+    <meta id="Copyright" name="Copyright" content="Copyright 2010 Apple Inc. All Rights Reserved."/>
+    <meta id="IndexTitle" name="IndexTitle" content="iPublicUtility/CAXException.cpp"/>
+    <meta id="xcode-display" name="xcode-display" content="render"/>
+    <meta name="viewport" content="width=550" />
+    
+    <link rel="stylesheet" type="text/css" href="../../../Resources/441/CSS/ac_media.css" charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../../../Resources/441/CSS/devpubs.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Resources/441/CSS/docs.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../Resources/441/CSS/docHeader.css"/>
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="../../../Resources/441/CSS/ie.css"/><![endif]-->
+    
+</head>    
+<body><a name="//apple_ref/doc/uid/DTS40008413-iPublicUtility_CAXException_cpp" title="iPublicUtility/CAXException.cpp"></a>
+    <div id="adcHeader" class="hideOnPrint hideInXcode" tabindex="1">
+        
+    </div>
+    <div id="header">
+        <div id="title">
+            <a id="titleLink" href="../index.html" tabindex="2"><h1></h1></a>
+            <span id="file_links">
+                <a id="Companion_link"><img src="../../../Resources/441/Images/header_toc/docdownload.png" height="16" width="16" id="companion_icon" alt="Download Icon" title="Download File" tabindex='3'>Companion File</a>
+                <a id="PDF_link"><img src="../../../Resources/441/Images/header_toc/pdf.png" height="16" width="16" id="pdf_icon" alt="" tabindex='4' aria-label="Download PDF of iPhone Development Guide">PDF</a>
+            </span></div>
+        <ul id="headerButtons" class="hideOnPrint">
+            <li id="toc_button" style="display:none"><button tabindex="5" id="table_of_contents" class="open">Table of Contents</button></li>
+            <li id="jumpto_button" style="display:none"><select tabindex="6" id="jumpTo"><option value="top">Jump To...</option></select></li>
+            <li id="downloadSample_button" style="display:none">
+                <a id="Sample_link"><button id="Sample_button">Download Sample Code</button></a>
+            </li>
+        </ul>
+    </div>
+    <div id="tocContainer" class="isShowingTOC" tabindex="7">
+        <ul id="toc"></ul>
+    </div>
+    <div id="contents" class="isShowingTOC" tabindex="0">
+        <!-- CONTENTS -->
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a class='nextLink' rel='next' href='iPublicUtility_CAXException_h.html'>Next</a><a class='previousLink' rel='prev' href='iPublicUtility_CAStreamBasicDescription_h.html'>Previous</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a id="INDEX" href="../index.html" style="display:none;"></a>
+        
+        <a name="//apple_ref/doc/uid/DTS40008413-iPublicUtility_CAXException_cpp-DontLinkElementID_14" title="iPublicUtility/CAXException.cpp"></a>
+    <br /><h1 id="pageTitle">iPublicUtility/CAXException.cpp</h1>
+    <div class="codesample clear"><table><tr><td scope="row"><pre>/*  Copyright © 2007 Apple Inc. All Rights Reserved.<span></span></pre></td></tr><tr><td scope="row"><pre>    <span></span></pre></td></tr><tr><td scope="row"><pre>    Disclaimer: IMPORTANT:  This Apple software is supplied to you by <span></span></pre></td></tr><tr><td scope="row"><pre>            Apple Inc. ("Apple") in consideration of your agreement to the<span></span></pre></td></tr><tr><td scope="row"><pre>            following terms, and your use, installation, modification or<span></span></pre></td></tr><tr><td scope="row"><pre>            redistribution of this Apple software constitutes acceptance of these<span></span></pre></td></tr><tr><td scope="row"><pre>            terms.  If you do not agree with these terms, please do not use,<span></span></pre></td></tr><tr><td scope="row"><pre>            install, modify or redistribute this Apple software.<span></span></pre></td></tr><tr><td scope="row"><pre>            <span></span></pre></td></tr><tr><td scope="row"><pre>            In consideration of your agreement to abide by the following terms, and<span></span></pre></td></tr><tr><td scope="row"><pre>            subject to these terms, Apple grants you a personal, non-exclusive<span></span></pre></td></tr><tr><td scope="row"><pre>            license, under Apple's copyrights in this original Apple software (the<span></span></pre></td></tr><tr><td scope="row"><pre>            "Apple Software"), to use, reproduce, modify and redistribute the Apple<span></span></pre></td></tr><tr><td scope="row"><pre>            Software, with or without modifications, in source and/or binary forms;<span></span></pre></td></tr><tr><td scope="row"><pre>            provided that if you redistribute the Apple Software in its entirety and<span></span></pre></td></tr><tr><td scope="row"><pre>            without modifications, you must retain this notice and the following<span></span></pre></td></tr><tr><td scope="row"><pre>            text and disclaimers in all such redistributions of the Apple Software. <span></span></pre></td></tr><tr><td scope="row"><pre>            Neither the name, trademarks, service marks or logos of Apple Inc. <span></span></pre></td></tr><tr><td scope="row"><pre>            may be used to endorse or promote products derived from the Apple<span></span></pre></td></tr><tr><td scope="row"><pre>            Software without specific prior written permission from Apple.  Except<span></span></pre></td></tr><tr><td scope="row"><pre>            as expressly stated in this notice, no other rights or licenses, express<span></span></pre></td></tr><tr><td scope="row"><pre>            or implied, are granted by Apple herein, including but not limited to<span></span></pre></td></tr><tr><td scope="row"><pre>            any patent rights that may be infringed by your derivative works or by<span></span></pre></td></tr><tr><td scope="row"><pre>            other works in which the Apple Software may be incorporated.<span></span></pre></td></tr><tr><td scope="row"><pre>            <span></span></pre></td></tr><tr><td scope="row"><pre>            The Apple Software is provided by Apple on an "AS IS" basis.  APPLE<span></span></pre></td></tr><tr><td scope="row"><pre>            MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION<span></span></pre></td></tr><tr><td scope="row"><pre>            THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS<span></span></pre></td></tr><tr><td scope="row"><pre>            FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND<span></span></pre></td></tr><tr><td scope="row"><pre>            OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.<span></span></pre></td></tr><tr><td scope="row"><pre>            <span></span></pre></td></tr><tr><td scope="row"><pre>            IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL<span></span></pre></td></tr><tr><td scope="row"><pre>            OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF<span></span></pre></td></tr><tr><td scope="row"><pre>            SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS<span></span></pre></td></tr><tr><td scope="row"><pre>            INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,<span></span></pre></td></tr><tr><td scope="row"><pre>            MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED<span></span></pre></td></tr><tr><td scope="row"><pre>            AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),<span></span></pre></td></tr><tr><td scope="row"><pre>            STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE<span></span></pre></td></tr><tr><td scope="row"><pre>            POSSIBILITY OF SUCH DAMAGE.<span></span></pre></td></tr><tr><td scope="row"><pre>*/<span></span></pre></td></tr><tr><td scope="row"><pre>#include "CAXException.h"<span></span></pre></td></tr><tr><td scope="row"><pre> <span></span></pre></td></tr><tr><td scope="row"><pre>CAXException::WarningHandler CAXException::sWarningHandler = NULL;<span></span></pre></td></tr></table></div>
+
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a class='nextLink' rel='next' href='iPublicUtility_CAXException_h.html'>Next</a><a class='previousLink' rel='prev' href='iPublicUtility_CAStreamBasicDescription_h.html'>Previous</a>
+        </div><br/>
+        <br/><hr /><div align="center"><p class="content_text" lang="en" dir="ltr"> <!--#if expr="0=1" -->&#x00a9; 2009 Apple Inc. All Rights Reserved. &#40;<!--#endif -->Last updated: 2009-09-11<!--#if expr="0=1" -->&#041;<!--#endif --></p></div>
+
+        <div class="hideOnPrint">
+            <!-- start of footer -->
+            <div id="feedbackForm" style="margin-left: auto; margin-right: auto; width: 38em; margin-bottom: 15px; margin-top: 15px; font-weight: bold; color: #333333; background: #d9d9d9; padding: 5px 10px 5px 10px; height: 15px; text-align: center; -webkit-border-radius: 12px; -moz-border-radius: 12px; vertical-align: middle;">
+    Did this document help you?
+    <span class="tooltip" data-abstract="<b>Yes:</b> Tell us what works for you.">
+       <a href="http://developer.apple.com/feedback/?v=1&url=/iphone/library/samplecode/AQOfflineRenderTest/Listings/iPublicUtility_CAXException_cpp.html%3Fid%3DDTS40008413-1.3&media=xcode" class='urlLink'>Yes</a>
+    </span>
+    <span class="tooltip" data-abstract="<b>It's good, but:</b> Report typos, inaccuracies, and so forth.">
+        <a href="http://developer.apple.com/feedback/?v=2&url=/iphone/library/samplecode/AQOfflineRenderTest/Listings/iPublicUtility_CAXException_cpp.html%3Fid%3DDTS40008413-1.3&media=xcode" class='urlLink'>It's good, but...</a>
+    </span>
+    <span class="tooltip" data-abstract="<b>Not helpful:</b> Tell us what would have helped.">
+        <a href="http://developer.apple.com/feedback/?v=3&url=/iphone/library/samplecode/AQOfflineRenderTest/Listings/iPublicUtility_CAXException_cpp.html%3Fid%3DDTS40008413-1.3&media=xcode" class='urlLink'>Not helpful...</a>
+    </span>
+</div>
+            <div class="hideInXcode">
+                
+            </div>
+            <!-- end of footer -->
+        </div>
+        <!-- /CONTENTS -->
+    </div>
+    <div id='breadcrumbs' tabindex="8"><a href="http://developer.apple.com/iphone" class="browserLink" rel="">iPhone Dev Center</a> <img src='../../../Resources/441/Images/header_toc/triangle_closed.png' alt="Right arrow" /> <a href="../../../navigation/index.html#//apple_ref/doc/uid/TP40007404" target="_top">iPhone OS Reference Library</a> <img src='../../../Resources/441/Images/header_toc/triangle_closed.png' alt="Right arrow" /> <a href="../../../navigation/topic_details/649.html#//apple_ref/doc/uid/TP40007356" target="_top">Audio &amp; Video: Audio</a> <img src='../../../Resources/441/Images/header_toc/triangle_closed.png' alt="Right arrow" /> <a href="../Introduction/Intro.html#//apple_ref/doc/uid/DTS40008413-Intro-DontLinkElementID_2">AQOfflineRenderTest</a></div>
+    <div id="tooltip"></div>
+<div id="pediaWindow">
+    <div id="pediaHeader"></div>
+    <div id="pediaBody"></div>
+    <div id="pediaFooter"></div>
+</div>
+<div id="QuickLookGreyout"></div>
+<div id="QuickLookWindow">
+    <div id="QuickLookHeader"></div>
+    <div id="QuickLookBody"></div>
+    <div id="QuickLookFooter"></div>
+</div>
+<img src="../../../Resources/441/Images/QuickLook/closebox.png" id="QuickLookCloseBox">
+</body>
+<script type="text/javascript" src="../../../Resources/441/JavaScript/lib/prototype.js"></script>
+<script type="text/javascript">
+    var Page={
+        type: "Conceptual Flow",
+        language: document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
+        resourcesURI: '../../../Resources/441',
+        tocURI: '../book.json',
+        indexTitle: 'iPublicUtility/CAXException.cpp',
+        indexURI: '../index.html',
+        nextPage: 'iPublicUtility_CAXException_h.html',
+        previousPage: 'iPublicUtility_CAStreamBasicDescription_h.html',
+        root : $('INDEX') ? $('INDEX').href.slice(0, $('INDEX').href.lastIndexOf('/')) + '/': ""
+    };
+</script>
+<!-- Media player includes -->
+<script type="text/javascript" src="../../../Resources/441/JavaScript/lib/scriptaculous.js"></script>
+<script type="text/javascript" src="../../../Resources/441/JavaScript/lib/event_mixins.js"></script>
+<script type="text/javascript" src="../../../Resources/441/JavaScript/lib/browserdetect.js"></script>
+<script type="text/javascript" src="../../../Resources/441/JavaScript/lib/ac_media.js"></script>
+<!-- /Media player includes -->
+<script type="text/javascript" src="../../../Resources/441/JavaScript/devpubs.js"></script>
+<script type="text/javascript" src="../../../Resources/441/JavaScript/header_toc.js"></script>
+<script type="text/javascript" src="../../../Resources/441/JavaScript/pedia.js"></script>
+</html>
